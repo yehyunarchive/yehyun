@@ -1,9 +1,9 @@
-<!doctype html>
+
 <html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Klavier cadenZa.</title>
+<title>leeyehyun</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <style>
   :root {
@@ -110,11 +110,8 @@
   <!-- ===== 리스트 ===== -->
   <section class="page active" data-page="0">
     <div class="panel">
-      <p class="head"><span class="chip">@ckjaehyeon</span> for 5oz<sup>(Key.)</sup> 차재현</p>
-      <p class="intro">
-        여든여덟 개의 건반을 전부 건너야 닿을 수 있는 이야기를 다룹니다<br>
-        열람 감사합니다 즐거운 하루 보내세요 듣고 싶은 곡을 골라 <span class="box">클릭</span> 해 주세요
-      </p>
+      <p class="head"><span class="chip">@fluctsne</span> 20<sup>+</sup> (only)</p>
+     
       <div class="tracks">
         <div class="track" data-go="1"><span class="no">01</span><span class="name">Loved Completely</span><span class="time">03:41</span></div>
         <div class="track" data-go="2"><span class="no">02</span><span class="name">Let My Heart Grow</span><span class="time">04:15</span></div>
