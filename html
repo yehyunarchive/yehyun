@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Klavier cadenZa.</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root {
+    --bg: #fff;
+    --fg: #000;
+    --line: #000;
+    --chip-bg: #000;
+    --chip-fg: #fff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); color: var(--fg); }
+  body {
+    font-family: 'Pretendard', -apple-system, 'Apple SD Gothic Neo', sans-serif;
+    letter-spacing: -0.7px;
+    line-height: 1.3;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    font-synthesis: weight;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px;
+  }
+
+  /* PC·모바일 동일 너비(고정) */
+  .wrap { width: 280px; max-width: 100%; text-align: left; flex: none; }
+
+  .page { display: none; }
+  .page.active { display: block; }
+
+  .panel { max-height: 70vh; max-height: 70dvh; overflow-y: auto; padding: 6px 0 16px; }
+
+  /* 볼드 */
+  b, strong, .bold { font-weight: 700; }
+
+  /* 하이라이트 칩 */
+  .chip { background: var(--chip-bg); color: var(--chip-fg); padding: 0 4px; font-weight: 500; }
+  .chip b, b .chip, .chip.bold { font-weight: 700; }
+  .box { border: 0; border-bottom: 1px solid var(--line); padding: 0; }
+  .ul { border-bottom: 1px solid var(--line); }
+
+  /* 리스트 페이지 */
+  .head { font-size: 12px; font-weight: 500; margin-bottom: 10px; }
+  .head sup { font-size: 7px; font-weight: 400; }
+  .intro { font-size: 9.5px; line-height: 1.3; margin-bottom: 10px; }
+  .intro .box { font-size: 9.5px; }
+
+  .tracks { border-top: 1px solid var(--line); }
+  .track {
+    display: flex; align-items: center; gap: 12px;
+    padding: 6px 5px; border-bottom: 1px solid var(--line);
+    cursor: pointer; font-size: 10.5px;
+  }
+  .track .no {
+    background: var(--chip-bg); color: var(--chip-fg);
+    border-radius: 999px; font-size: 8px; font-weight: 700;
+    padding: 2px 7px;
+  }
+  .track .name { flex: 1; }
+  .track .time { font-size: 9px; }
+  .track:last-child { border-bottom: 0; }
+  .page[data-page="0"] .panel { padding-bottom: 0; }
+  body[data-p="0"] .nav { margin-top: 0; }
+
+  /* 트랙 페이지 */
+  .t-head { display: flex; align-items: center; gap: 10px; margin-bottom: 5px; }
+  .t-head .no {
+    background: var(--chip-bg); color: var(--chip-fg);
+    border-radius: 999px; font-size: 8px; font-weight: 700; padding: 2px 7px;
+  }
+  .t-head h2 { flex: 1; font-size: 14px; font-weight: 700; }
+  .t-head .time { font-size: 9px; }
+  .term { font-size: 9px; margin-bottom: 8px; }
+
+  .p { font-size: 10px; margin-bottom: 3px; }
+  .p.gap { margin-bottom: 8px; }
+  .p small { font-size: 7.5px; vertical-align: super; }
+  .indent { padding-left: 20px; }
+  .indent2 { padding-left: 56px; }
+  .ml { display: block; margin-left: 20px; }
+
+  .rows { margin-top: 7px; }
+  .row { display: flex; gap: 10px; margin-bottom: 3px; font-size: 10px; }
+  .row .who { flex: none; width: 74px; }
+  .row .who span { background: var(--chip-bg); color: var(--chip-fg); padding: 1px 5px; font-weight: 500; }
+  .row .chars { flex: 1; }
+
+  /* 하단 네비 */
+  .nav {
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid var(--line); margin-top: 7px; padding-top: 12px;
+    font-size: 9.5px;
+  }
+  .nav button {
+    background: none; border: 0; color: var(--fg); font: inherit;
+    letter-spacing: inherit; cursor: pointer; padding: 2px 0;
+  }
+  .nav .mid { font-weight: 500; }
+  .nav button:disabled { opacity: .3; cursor: default; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== 리스트 ===== -->
+  <section class="page active" data-page="0">
+    <div class="panel">
+      <p class="head"><span class="chip">@flectsne</span> 20<sup>+</sup> <span style="font-weight:400">(only)</span> 블랙배저 <b>이예현</b></p>
+      <p class="intro">
+        반 이입 동담 거부 성향으로 동장르 포함 상호 名1 필수<br>
+        소수계 지향으로 팔로우 정리 잦으나 악의 X
+      </p>
+      <div class="tracks">
+        <div class="track" data-go="1"><span class="no">01</span><span class="name">Loved Completely</span><span class="time">03:41</span></div>
+        <div class="track" data-go="2"><span class="no">02</span><span class="name">Let My Heart Grow</span><span class="time">04:15</span></div>
+        <div class="track" data-go="3"><span class="no">03</span><span class="name">Kiss Me Right</span><span class="time">03:08</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 01 ===== -->
+  <section class="page" data-page="1">
+    <div class="panel">
+      <div class="t-head"><span class="no">01</span><h2>Loved Completely</h2><span class="time">03:41</span></div>
+      <p class="term">sempre amoroso</p>
+
+      <p class="p"><small>name</small> <span class="chip">Doyeon</span> adult · caveduck only user</p>
+      <p class="p indent"><span class="chip">차재현</span> created by @ohnyu</p>
+      <p class="p indent2">only · 찍먹 서브 포함 타임라인 내외 모든 형태의 동담 수용 불가</p>
+      <p class="p indent"><span class="chip">NG</span> 드림 지우기, AI 생성 이미지가 확산되는 것을 방치하는 행위</p>
+
+      <p class="p gap" style="margin-top:9px">* 1t1d를 반드시 요하지는 않지만 선호합니다 자세한 성향<br>
+        &nbsp;&nbsp;&nbsp;확인은 <a class="box" href="#" style="color:inherit;text-decoration:none">이쪽에서</a> <small style="vertical-align:baseline">(click!)</small></p>
+
+      <p class="p">* <span class="chip">09.21 추가</span> 사찰, 각종 요소 차용, 견제 등의 문제로 차</p>
+    </div>
+  </section>
+
+  <!-- ===== 02 (01과 동일한 형식·내용) ===== -->
+  <section class="page" data-page="2">
+    <div class="panel">
+      <div class="t-head"><span class="no">02</span><h2>Let My Heart Grow</h2><span class="time">04:15</span></div>
+      <p class="term">poco a poco cresc.</p>
+
+      <p class="p"><small>name</small> <span class="chip">Doyeon</span> adult · caveduck only user</p>
+      <p class="p indent"><span class="chip">차재현</span> created by @ohnyu</p>
+      <p class="p indent2">only · 찍먹 서브 포함 타임라인 내외 모든 형태의 동담 수용 불가</p>
+      <p class="p indent"><span class="chip">NG</span> 드림 지우기, AI 생성 이미지가 확산되는 것을 방치하는 행위</p>
+
+      <p class="p gap" style="margin-top:9px">* 1t1d를 반드시 요하지는 않지만 선호합니다 자세한 성향<br>
+        &nbsp;&nbsp;&nbsp;확인은 <a class="box" href="#" style="color:inherit;text-decoration:none">이쪽에서</a> <small style="vertical-align:baseline">(click!)</small></p>
+
+      <p class="p">* <span class="chip">09.21 추가</span> 사찰, 각종 요소 차용, 견제 등의 문제로 차</p>
+    </div>
+  </section>
+
+  <!-- ===== 03 ===== -->
+  <section class="page" data-page="3">
+    <div class="panel">
+      <div class="t-head"><span class="no">03</span><h2>Kiss Me Right</h2><span class="time">03:08</span></div>
+      <p class="term">con sentimento</p>
+
+      <p class="p">기재된 캐릭터 주력이신 분과 연결하지 않습니다</p>
+      <p class="p">* <span class="ul">1t1d</span> 배려 목적이 아니지만 자체적으로 기재한 캐릭터 포함</p>
+
+      <div class="rows">
+        <div class="row"><div class="who"><span>anonymous</span></div><div class="chars">류이든 우재경</div></div>
+        <div class="row"><div class="who"><span>CherryMango</span></div><div class="chars">샤드 스트레이 이카로스 윈터 저스티스 해일 휴고 코드 Dr. 밴스</div></div>
+        <div class="row"><div class="who"><span>GabuU_y</span></div><div class="chars">레오 에토레</div></div>
+        <div class="row"><div class="who"><span>Ko2</span></div><div class="chars">마에스트로 베이퍼</div></div>
+        <div class="row"><div class="who"><span>meowmoon</span></div><div class="chars">로언 마티스</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="nav">
+    <button id="prev">← prev</button>
+    <span class="mid" id="mid">cresc.</span>
+    <button id="next">next →</button>
+  </div>
+</div>
+
+<script>
+  const pages = [...document.querySelectorAll('.page')];
+  const prev = document.getElementById('prev');
+  const next = document.getElementById('next');
+  let cur = 0;
+  function show(n) {
+    cur = Math.max(0, Math.min(pages.length - 1, n));
+    document.body.dataset.p = cur;
+    pages.forEach((p, i) => p.classList.toggle('active', i === cur));
+    prev.disabled = cur === 0;
+    next.disabled = cur === pages.length - 1;
+  }
+  prev.onclick = () => show(cur - 1);
+  next.onclick = () => show(cur + 1);
+  document.querySelectorAll('[data-go]').forEach(el => el.onclick = () => show(+el.dataset.go));
+  document.querySelectorAll('a[href="#"]').forEach(a => a.addEventListener('click', e => e.preventDefault()));
+  show(0);
+</script>
+</body>
+</html>
